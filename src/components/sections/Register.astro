@@ -11,14 +11,15 @@ const { title } = Astro.props
     <div class="font-light text-gray-400 dark:text-gray-300 text-xl">
       <slot />
     </div>
-    <form class="w-full max-w-2xl my-20 mx-auto" action="/api/contact" method="POST" id="contact-form">
+    <form class="w-full max-w-2xl my-20 mx-auto" id="contact-form">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
           <input 
             class="appearance-none bg-transparent border border-gray-600 dark:border-gray-500 w-full text-gray-200 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-800 focus:text-gray-200 focus:border-purple-600 dark:focus:border-purple-400 py-3 px-4 rounded" 
             type="text" 
+            id="name" 
             name="name" 
-            placeholder="Your Name" 
+            placeholder="Dein Name" 
             required
           >
         </div>
@@ -26,8 +27,9 @@ const { title } = Astro.props
           <input 
             class="appearance-none bg-transparent border border-gray-600 dark:border-gray-500 w-full text-gray-200 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-800 focus:text-gray-200 focus:border-purple-600 dark:focus:border-purple-400 py-3 px-4 rounded" 
             type="email" 
+            id="email" 
             name="email" 
-            placeholder="your.email@example.com" 
+            placeholder="deine.email@example.com" 
             required
           >
         </div>
@@ -36,16 +38,18 @@ const { title } = Astro.props
         <input 
           class="appearance-none bg-transparent border border-gray-600 dark:border-gray-500 w-full text-gray-200 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-800 focus:text-gray-200 focus:border-purple-600 dark:focus:border-purple-400 py-3 px-4 rounded" 
           type="text" 
+          id="subject" 
           name="subject" 
-          placeholder="Subject" 
+          placeholder="Betreff" 
           required
         >
       </div>
       <div class="mb-6">
         <textarea 
           class="appearance-none bg-transparent border border-gray-600 dark:border-gray-500 w-full text-gray-200 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-800 focus:text-gray-200 focus:border-purple-600 dark:focus:border-purple-400 py-3 px-4 rounded h-32 resize-none" 
+          id="message" 
           name="message" 
-          placeholder="Your message about self-hosting, tech, or just to say hi..." 
+          placeholder="Deine Nachricht über Self-Hosting, Tech, oder einfach nur zum Hallo sagen..." 
           required
         ></textarea>
       </div>
@@ -53,11 +57,11 @@ const { title } = Astro.props
         class="w-full bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600 text-white font-bold py-3 px-6 rounded transition duration-300 ease-in-out transform hover:scale-105" 
         type="submit"
       >
-        Send Message
+        Nachricht senden
       </button>
       <div class="mt-4 text-center">
         <p class="text-gray-400 dark:text-gray-300 text-sm">
-          By sending this message, you agree to our <a href="/privacy" class="underline hover:no-underline hover:text-purple-600 dark:hover:text-purple-400" title="Privacy Policy" target="_blank">Privacy Policy</a>
+          Durch das Senden dieser Nachricht stimmst du unserer <a href="/privacy" class="underline hover:no-underline hover:text-purple-600 dark:hover:text-purple-400" title="Datenschutzerklärung" target="_blank">Datenschutzerklärung</a> zu
         </p>
       </div>
     </form>
@@ -66,10 +70,17 @@ const { title } = Astro.props
 
 <script>
   document.getElementById('contact-form')?.addEventListener('submit', function(e) {
-    const button = this.querySelector('button[type="submit"]') as HTMLButtonElement;
-    if (button) {
-      button.textContent = 'Sending...';
-      button.disabled = true;
-    }
+    e.preventDefault();
+    
+    const name = (document.getElementById('name') as HTMLInputElement).value;
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const subject = (document.getElementById('subject') as HTMLInputElement).value;
+    const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+    
+    // Create mailto link
+    const mailtoLink = `mailto:tobias@steltner.cc?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nNachricht:\n${message}`)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
   });
 </script>

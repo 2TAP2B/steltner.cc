@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
-import vercel from '@astrojs/vercel/serverless'
 
 const build = {
   baseURL: '/',
@@ -30,8 +29,7 @@ export default defineConfig({
   site: build.siteURL,
   base: build.baseURL,
   outDir: build.outDir,
-  output: 'hybrid', // Enable server-side rendering for API routes
-  adapter: vercel(),
+  output: 'static', // Generate static site
   integrations: [
     tailwind({
       applyBaseStyles: false
