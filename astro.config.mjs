@@ -5,7 +5,7 @@ import node from '@astrojs/node'
 const build = {
   baseURL: '/',
   outDir: './dist',
-  siteURL: 'http://localhost:4321/'
+  siteURL: 'https://www.steltner.cc/'
 }
 
 const env = process.env.NODE_ENV
@@ -18,7 +18,7 @@ switch (env) {
     break
 
   case 'production':
-    build.siteURL = 'https://example.com/'
+    build.siteURL = 'https://www.steltner.cc/'
     break
 
   default:
