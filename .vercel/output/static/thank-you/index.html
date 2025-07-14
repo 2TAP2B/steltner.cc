@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="de"> <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><!-- PRELOAD CDN SCRIPTS --><link rel="preconnect" href="https://unpkg.com/popper.js@1" as="script"><link rel="preconnect" href="https://unpkg.com/tippy.js@4" as="script"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="description" content="Digitale Selbstbestimmung beginnt hier – Mail, Chat, Social Media und Dateien: selbst gehostet, datensouverän, open-source."><meta name="author" content="Tobias Steltner"><meta name="robots" content="index,follow"><!-- BEGIN SOCIAL META DATA --><meta property="og:site_name" content="steltner.cc – Frei, offen, selbst gehostet"><meta property="og:title" content="steltner.cc – Frei, offen, selbst gehostet"><meta property="og:description" content="Digitale Selbstbestimmung beginnt hier – Mail, Chat, Social Media und Dateien: selbst gehostet, datensouverän, open-source."><meta property="og:url" content="https://www.steltner.cc/thank-you/"><!-- ./END SOCIAL META DATA --><meta name="theme-color" content="#ffffff"><title>steltner.cc – Frei, offen, selbst gehostet</title><link rel="stylesheet" href="/_astro/index.BJ_NpCPA.css"><body class="font-sans text-gray-800 bg-gray-100 dark:text-gray-200 dark:bg-gray-900 transition-colors duration-200">  <div class="w-full min-h-screen flex flex-col justify-center items-center bg-gray-800 dark:bg-gray-900"> <div class="self-center text-center w-full xl:w-1/2 px-4 sm:px-0"> <div class="mb-8"> <svg class="w-24 h-24 text-green-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path> </svg> </div> <h1 class="font-bold tracking-widest text-gray-200 text-4xl mb-4">Danke für deine Nachricht! 🎉</h1> <div class="font-light text-gray-400 dark:text-gray-300 text-xl mb-8"> <p class="mb-4">Deine Nachricht wurde erfolgreich gesendet.</p> <p class="mb-4">Ich melde mich unter <span class="text-purple-400">tobias@steltner.cc</span> so schnell wie möglich zurück.</p> <p>Normalerweise innerhalb von 24 Stunden, außer ich bin gerade mit Servern beschäftigt! 🤓</p> </div> <div class="mt-8"> <a href="/" class="bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600 text-white font-bold py-3 px-6 rounded transition duration-300 ease-in-out transform hover:scale-105">
+Zurück zum Homelab
+</a> </div> </div> </div>  <!-- Footer is disabled, only showing the "Back to Top" button --><div class=""> <a id="btt" class="hidden fixed bottom-0 right-0 mb-4 mr-4 text-gray-200 border border-purple-600 dark:border-purple-400 hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-purple-600 dark:hover:text-purple-400 hover:border-browngray no-underline px-6 py-1 bg-purple-600 dark:bg-purple-700 shadow-md transition duration-300" href="#top" title="Back to Top">UP</a> </div> <div class="fixed bottom-0 left-0 m-6"> <a href="mailto:tobias@steltner.cc" title="Contact us via email" class="block rounded-full bg-black dark:bg-gray-800 text-purple-600 dark:text-purple-400 hover:bg-white dark:hover:bg-gray-700 hover:text-black dark:hover:text-purple-300 shadow-md p-4 transition duration-300"> <svg width="30" height="30" class="block" fill="currentColor" viewBox="0 0 24 24"> <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path> </svg> </a> </div> <!-- "Follow" Tooltip template --> <template id="followTip"> <a href="https://github.com/2TAP2B" class="inline-block text-gray-200 text-sm bg-purple-600 dark:bg-purple-700 shadow-md hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 no-underline p-1 px-4 mx-2 my-1 transition duration-300" target="_blank" rel="noopener">GitHub</a><a href="mailto:tobias@steltner.cc" class="inline-block text-gray-200 text-sm bg-purple-600 dark:bg-purple-700 shadow-md hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 no-underline p-1 px-4 mx-2 my-1 transition duration-300" target="_blank" rel="noopener">Email</a><a href="https://matrix.to/#/@tobias:steltner.cc" class="inline-block text-gray-200 text-sm bg-purple-600 dark:bg-purple-700 shadow-md hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 no-underline p-1 px-4 mx-2 my-1 transition duration-300" target="_blank" rel="noopener">Matrix</a><a href="https://social.steltner.cc/@tobias" class="inline-block text-gray-200 text-sm bg-purple-600 dark:bg-purple-700 shadow-md hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 no-underline p-1 px-4 mx-2 my-1 transition duration-300" target="_blank" rel="noopener">Mastodon</a> </template> <script src="https://unpkg.com/popper.js@1"></script> <script src="https://unpkg.com/tippy.js@4"></script> <script>
+  function navToggle() {
+    let btn = document.getElementById('menuBtn')
+    let nav = document.getElementById('menu')
+
+    btn.classList.toggle('open')
+    nav.classList.toggle('flex')
+    nav.classList.toggle('hidden')
+  }
+
+  // Sticky header functionality
+  let lastScrollY = 0
+  let navbar = null
+
+  window.addEventListener('scroll', function () {
+    if (!navbar) navbar = document.getElementById('navbar')
+    let btt = document.getElementById('btt')
+    const currentScrollY = window.scrollY
+
+    // Back to top button
+    if (currentScrollY >= 1080) {
+      btt.classList.remove('hidden')
+      btt.classList.add('block')
+    } else {
+      btt.classList.add('hidden')
+      btt.classList.remove('block')
+    }
+
+    // Sticky header behavior - show when scrolling up, hide when scrolling down
+    if (currentScrollY > 200) { // Only apply sticky behavior after scrolling past 200px
+      if (currentScrollY < lastScrollY) {
+        // Scrolling up - show navbar
+        navbar.classList.remove('-translate-y-full')
+        navbar.classList.add('translate-y-0')
+      } else {
+        // Scrolling down - hide navbar
+        navbar.classList.add('-translate-y-full')
+        navbar.classList.remove('translate-y-0')
+      }
+    } else {
+      // At the top - show navbar
+      navbar.classList.remove('-translate-y-full')
+      navbar.classList.add('translate-y-0')
+    }
+
+    lastScrollY = currentScrollY
+  })
+
+  console.info('Code/Design: ttntm.me')
+
+  const template = document.getElementById('followTip')
+  const container = document.createElement('div')
+
+  container.appendChild(document.importNode(template.content, true))
+
+  tippy('#follow', {
+    content: container.innerHTML,
+    animation: 'scale',
+    duration: 250,
+    arrow: true,
+    placement: 'bottom',
+    interactive: true
+  })
+</script> </body></html>
