@@ -1,0 +1,24 @@
+{
+  "author": "Tobias Steltner",
+  "description": "Digitale Selbstbestimmung beginnt hier – Mail, Chat, Social Media und Dateien: selbst gehostet, datensouverän, open-source.",
+  "title": "steltner.cc – Frei, offen, selbst gehostet",
+  "language": "de",
+  "social": [
+    {
+      "title": "GitHub",
+      "url": "https://github.com/2TAP2B"
+    },
+    {
+      "title": "Email",
+      "url": "mailto:tobias@steltner.cc"
+    },
+    {
+      "title": "Matrix",
+      "url": "https://matrix.to/#/@tobias:steltner.cc"
+    },
+    {
+      "title": "Mastodon",
+      "url": "https://social.steltner.cc/@tobias"
+    }
+  ]
+}

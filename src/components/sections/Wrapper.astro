@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content'
+import Header from './Header.astro'
+import SectionResolver from './SectionResolver.astro'
+import Navbar from '../Navbar.astro'
+
+const sections = await getCollection('sections')
+---
+<Navbar />
+<Header />
+<main>
+  {sections.map(sect => {
+    return <SectionResolver
+      sect={sect}
+      title={sect.data.title}
+      afterTitle={sect.data.afterTitle || ''}
+      type={sect.data.type}
+    />
+  })}
+</main>

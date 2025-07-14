@@ -1,0 +1,66 @@
+<script is:inline src="https://unpkg.com/popper.js@1"></script>
+<script is:inline src="https://unpkg.com/tippy.js@4"></script>
+<script is:inline>
+  function navToggle() {
+    let btn = document.getElementById('menuBtn')
+    let nav = document.getElementById('menu')
+
+    btn.classList.toggle('open')
+    nav.classList.toggle('flex')
+    nav.classList.toggle('hidden')
+  }
+
+  // Sticky header functionality
+  let lastScrollY = 0
+  let navbar = null
+
+  window.addEventListener('scroll', function () {
+    if (!navbar) navbar = document.getElementById('navbar')
+    let btt = document.getElementById('btt')
+    const currentScrollY = window.scrollY
+
+    // Back to top button
+    if (currentScrollY >= 1080) {
+      btt.classList.remove('hidden')
+      btt.classList.add('block')
+    } else {
+      btt.classList.add('hidden')
+      btt.classList.remove('block')
+    }
+
+    // Sticky header behavior - show when scrolling up, hide when scrolling down
+    if (currentScrollY > 200) { // Only apply sticky behavior after scrolling past 200px
+      if (currentScrollY < lastScrollY) {
+        // Scrolling up - show navbar
+        navbar.classList.remove('-translate-y-full')
+        navbar.classList.add('translate-y-0')
+      } else {
+        // Scrolling down - hide navbar
+        navbar.classList.add('-translate-y-full')
+        navbar.classList.remove('translate-y-0')
+      }
+    } else {
+      // At the top - show navbar
+      navbar.classList.remove('-translate-y-full')
+      navbar.classList.add('translate-y-0')
+    }
+
+    lastScrollY = currentScrollY
+  })
+
+  console.info('Code/Design: ttntm.me')
+
+  const template = document.getElementById('followTip')
+  const container = document.createElement('div')
+
+  container.appendChild(document.importNode(template.content, true))
+
+  tippy('#follow', {
+    content: container.innerHTML,
+    animation: 'scale',
+    duration: 250,
+    arrow: true,
+    placement: 'bottom',
+    interactive: true
+  })
+</script>

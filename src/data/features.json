@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Mail mit Mailcow",
+    "icon": "icon1.svg",
+    "content": "Eigener Mailserver mit Webmail, Kalender und Kontakten. Warum Gmail nutzen, wenn du’s auch selbst hosten kannst?"
+  },
+  {
+    "title": "Matrix Chat",
+    "icon": "icon2.svg",
+    "content": "Dezentrale Kommunikation, wie sie sein sollte. Chat über die Matrix-Welt, gebridged zu anderen Plattformen – komplett unter eigener Kontrolle."
+  },
+  {
+    "title": "Mastodon Instanz",
+    "icon": "icon3.svg",
+    "content": "Mein Spot im Fediverse. Social Media ohne Werbung, Tracking oder Algorithmen. Unabhängig, offen, self-hosted."
+  },
+{
+  "title": "Private Cloud Infrastruktur",
+  "icon": "icon4.svg",
+  "content": "Meine eigene Cloud – mit mobiler Drive-App, automatischem Sync und Webzugriff. Funktional wie Dropbox, aber komplett open-source und unter meiner Kontrolle."
+},
+  {
+    "title": "Self-Hosted Infrastruktur",
+    "icon": "icon5.svg",
+    "content": "Alles läuft auf eigenen Servern. Keine Ads, kein Tracking, keine Überraschungen – volle Souveränität über meine Tools."
+  },
+  {
+    "title": "100% Open Source",
+    "icon": "icon6.svg",
+    "content": "Alles basiert auf freier Software. Forkbar, erweiterbar, transparent – so macht Tech wirklich Sinn."
+  }
+]

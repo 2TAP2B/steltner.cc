@@ -1,0 +1,30 @@
+---
+import siteData from '../data/site.json'
+
+const pn = Astro.url.pathname
+const isHome = pn === '/'
+const site = Astro.site
+const abtLink = isHome
+  ? '#about'
+  : `${site}#about`
+const ftLink = isHome
+  ? '#features'
+  : `${site}#features`
+---
+<!-- Footer is disabled, only showing the "Back to Top" button -->
+<div class="">
+  <a id="btt" class="hidden fixed bottom-0 right-0 mb-4 mr-4 text-gray-200 border border-purple-600 dark:border-purple-400 hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-purple-600 dark:hover:text-purple-400 hover:border-browngray no-underline px-6 py-1 bg-purple-600 dark:bg-purple-700 shadow-md transition duration-300" href="#top" title="Back to Top">UP</a>
+</div>
+<div class="fixed bottom-0 left-0 m-6">
+  <a href="mailto:tobias@steltner.cc" title="Contact us via email" class="block rounded-full bg-black dark:bg-gray-800 text-purple-600 dark:text-purple-400 hover:bg-white dark:hover:bg-gray-700 hover:text-black dark:hover:text-purple-300 shadow-md p-4 transition duration-300">
+    <svg width="30" height="30" class="block" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+  </a>
+</div>
+<!-- "Follow" Tooltip template -->
+<template id="followTip">
+  {siteData.social.map((scm) => (
+    <a href={scm.url} class="inline-block text-gray-200 text-sm bg-purple-600 dark:bg-purple-700 shadow-md hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-gray-800 dark:hover:text-gray-200 no-underline p-1 px-4 mx-2 my-1 transition duration-300" target="_blank" rel="noopener">{scm.title}</a>
+  ))}
+</template>
