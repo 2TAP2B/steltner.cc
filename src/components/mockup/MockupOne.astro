@@ -1,0 +1,181 @@
+---
+import Polka from '@components/base/Polka.astro'
+---
+
+<div class="relative flex flex-col gap-6 ptablet:w-[480px]">
+  <!--Polka dots-->
+  <div class="absolute -top-5 -left-5 z-0">
+    <Polka />  
+  </div>
+  <div class="absolute -bottom-5 -right-5 z-0">
+    <Polka />  
+  </div>
+
+  <!--Items-->
+  <div class="flex items-end gap-6">
+    <!--Uptime Kuma Dashboard-->
+    <div class="w-full ltablet:w-2/3 lg:w-2/3">
+      <div
+        class="
+          relative
+          z-10
+          w-full
+          p-5
+          rounded-xl
+          bg-white
+          dark:bg-muted-800
+          border border-muted-200
+          dark:border-muted-700
+          shadow-xl shadow-muted-400/10
+          dark:shadow-muted-800/10
+        "
+      >
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
+            <iconify-icon class="iconify w-5 h-5 text-white" icon="ph:heart-duotone"></iconify-icon>
+          </div>
+          <h4
+            class="
+              font-heading font-semibold
+              text-muted-800
+              dark:text-muted-100
+            "
+          >
+            Uptime Kuma
+          </h4>
+        </div>
+        <!--Service Status-->
+        <div class="space-y-3 mb-4">
+          <div class="flex items-center justify-between">
+            <span class="font-sans text-sm text-muted-600 dark:text-muted-300">Mail Server</span>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+              <span class="font-sans text-xs text-emerald-600">99.5%</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-sans text-sm text-muted-600 dark:text-muted-300">Seafile</span>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+              <span class="font-sans text-xs text-emerald-600">99.2%</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-sans text-sm text-muted-600 dark:text-muted-300">VPN Gateway</span>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+              <span class="font-sans text-xs text-yellow-600">98.2%</span>
+            </div>
+          </div>
+        </div>
+        <!--Response Time Chart-->
+        <div class="flex items-end justify-between gap-2 h-16">
+          <div class="flex-1 h-12 rounded-md bg-emerald-300"></div>
+          <div class="flex-1 h-14 rounded-md bg-emerald-300"></div>
+          <div class="flex-1 h-10 rounded-md bg-emerald-300"></div>
+          <div class="flex-1 h-16 rounded-md bg-emerald-300"></div>
+          <div class="flex-1 h-8 rounded-md bg-yellow-300"></div>
+          <div class="flex-1 h-12 rounded-md bg-emerald-300"></div>
+          <div class="flex-1 h-14 rounded-md bg-emerald-300"></div>
+        </div>
+        <p class="font-sans text-xs text-muted-400 mt-2 text-center">Response time (ms)</p>
+      </div>
+    </div>
+    <!--Gotify Notification-->
+    <div class="w-full md:w-1/3 ptablet:hidden">
+      <div
+        class="
+          relative
+          z-10
+          w-full
+          p-4
+          rounded-xl
+          bg-white
+          dark:bg-muted-800
+          border border-muted-200
+          dark:border-muted-700
+          shadow-xl shadow-muted-400/10
+          dark:shadow-muted-800/10
+        "
+      >
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-6 h-6 bg-blue-500 rounded-md flex items-center justify-center">
+              <iconify-icon class="iconify w-4 h-4 text-white" icon="ph:bell-duotone"></iconify-icon>
+            </div>
+            <span class="font-sans text-xs font-medium text-muted-600 dark:text-muted-300">Gotify</span>
+          </div>
+          <h4
+            class="
+              font-heading font-medium text-sm
+              text-muted-800
+              dark:text-muted-100
+              mb-2
+            "
+          >
+            Backup Complete
+          </h4>
+          <p class="font-sans text-xs text-muted-500 dark:text-muted-400 mb-2">
+            Daily backup finished successfully
+          </p>
+          <span class="font-sans text-xs text-muted-400">2 min ago</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Beszel System Stats-->
+  <div class="w-full flex justify-end">
+    <div
+      class="
+        relative
+        z-10
+        w-full
+        max-w-md
+        p-5
+        rounded-xl
+        bg-white
+        dark:bg-muted-800
+        border border-muted-200
+        dark:border-muted-700
+        shadow-xl shadow-muted-400/10
+        dark:shadow-muted-800/10
+      "
+    >
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-8 h-8 bg-violet-500 rounded-lg flex items-center justify-center">
+          <iconify-icon class="iconify w-5 h-5 text-white" icon="ph:cpu-duotone"></iconify-icon>
+        </div>
+        <div>
+          <h4
+            class="
+              font-heading font-medium
+              text-muted-800
+              dark:text-muted-100
+            "
+          >
+            Beszel Metrics
+          </h4>
+          <p class="font-sans text-xs text-muted-400">homelab-01</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="text-center">
+          <div class="text-2xl font-bold text-emerald-500">23%</div>
+          <div class="text-xs text-muted-400">CPU</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-blue-500">45%</div>
+          <div class="text-xs text-muted-400">RAM</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-orange-500">67%</div>
+          <div class="text-xs text-muted-400">Disk</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-purple-500">2.3GB</div>
+          <div class="text-xs text-muted-400">Network</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

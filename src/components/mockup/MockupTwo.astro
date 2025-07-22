@@ -1,0 +1,68 @@
+<div class="relative w-full max-w-sm mx-auto space-y-4">
+  <!--Background shape-->
+  <div
+    class="absolute top-0 -left-10 ptablet:-left-32 h-[480px] w-[480px] rotate-45 mask mask-hexed bg-primary-100 dark:bg-primary-500/5 z-0"
+  >
+  </div>
+
+  <!--Matrix Chat Header-->
+  <div
+    class="relative -left-8 ptablet:-left-16 z-10 w-full p-4 rounded-xl bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10"
+  >
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+        <iconify-icon class="iconify w-6 h-6 text-white" icon="simple-icons:matrix"></iconify-icon>
+      </div>
+      <div>
+        <h4 class="font-heading font-medium text-muted-800 dark:text-muted-100">
+          #homelab
+        </h4>
+        <p class="font-sans text-xs text-green-600">@xanten.cc</p>
+      </div>
+      <div class="ml-auto flex items-center gap-1">
+        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+        <span class="font-sans text-xs text-muted-400">E2EE</span>
+      </div>
+    </div>
+  </div>
+
+  <!--System Bot Message-->
+  <div
+    class="relative -right-8 ptablet:right-0 z-10 w-full p-4 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-700 shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10"
+  >
+    <div class="flex gap-3">
+      <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center">
+        <iconify-icon class="iconify w-4 h-4 text-white" icon="ph:robot-duotone"></iconify-icon>
+      </div>
+      <div>
+        <h4 class="font-heading font-medium text-emerald-800 dark:text-emerald-200">
+          mailcow-bot
+        </h4>
+        <p class="font-sans text-xs text-emerald-600 dark:text-emerald-400 mb-2">3 min ago</p>
+        <p class="font-sans text-sm text-emerald-700 dark:text-emerald-300">
+          📧 Mail queue: 0 | DKIM: ✅ | SPF: ✅ | DMARC: ✅
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--Admin Message-->
+  <div
+    class="relative -left-8 ptablet:-left-16 z-10 w-full p-4 rounded-xl bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10"
+  >
+    <div class="flex gap-3">
+      <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+        <iconify-icon class="iconify w-4 h-4 text-white" icon="ph:user-duotone"></iconify-icon>
+      </div>
+      <div>
+        <h4 class="font-heading font-medium text-muted-800 dark:text-muted-100">
+          @tobias:xanten.cc
+        </h4>
+        <p class="font-sans text-xs text-muted-400 mb-2">7 min ago</p>
+        <p class="font-sans text-sm text-muted-500 dark:text-muted-300">
+          🔧 Matrix federation test successful with matrix.org
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

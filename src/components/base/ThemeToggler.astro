@@ -1,0 +1,31 @@
+<label x-cloak
+  class="flex w-10 h-10 items-center justify-center relative mx-auto lg:m-0 focus-visible:tw-accessibility-static cursor-pointer"
+>
+  <input
+    type="checkbox"
+    class="absolute top-0 left-0 z-[2] w-full h-full opacity-0 cursor-pointer"
+    @change="toggleTheme()"
+  />
+  
+  <!-- Sun Icon for Light Mode -->
+  <iconify-icon
+    icon="line-md:sunny-twotone-loop"
+    class="absolute w-6 h-6 text-yellow-500 transition-all duration-500 pointer-events-none"
+    :class=`[
+      !$store.app.isDark
+        ? 'opacity-100 scale-100'
+        : 'opacity-0 scale-75',
+    ]`
+  ></iconify-icon>
+  
+  <!-- Moon Icon for Dark Mode -->
+  <iconify-icon
+    icon="line-md:moon-alt-loop"
+    class="absolute w-6 h-6 text-blue-300 transition-all duration-500 pointer-events-none"
+    :class=`[
+      !$store.app.isDark
+        ? 'opacity-0 scale-75'
+        : 'opacity-100 scale-100',
+    ]`
+  ></iconify-icon>
+</label>
